@@ -1,0 +1,101 @@
+Microsoft Windows [Version 10.0.18363.1139]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+D:\esp\projects\m5stack_espidf_sd_card_write_test>set IDF_PATH=d:\esp\esp-idf
+
+D:\esp\projects\m5stack_espidf_sd_card_write_test>d:\.espressif\python_env\idf4.1_py3.8_env\Scripts\python.exe d:\esp\esp-idf\tools\idf.py 
+-p COM7 monitor
+Executing action: monitor
+Running idf_monitor in directory d:\esp\projects\m5stack_espidf_sd_card_write_test
+Executing "d:\.espressif\python_env\idf4.1_py3.8_env\Scripts\python.exe d:\esp\esp-idf\tools/idf_monitor.py -p COM7 -b 115200 --toolchain-prefix xtensa-esp32-elf- d:\esp\projects\m5stack_espidf_sd_card_write_test\build\m5stack_espidf_sd_card_write_test.elf -m 'd:\.espressif\python_env\idf4.1_py3.8_env\Scripts\python.exe' 'd:\esp\esp-idf\tools\idf.py' '-p' 'COM7'"...
+--- idf_monitor on COM7 115200 ---
+--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:4
+load:0x3fff0034,len:6872
+load:0x40078000,len:13072
+ho 0 tail 12 room 4
+load:0x40080400,len:3896
+0x40080400: _init at ??:?
+
+entry 0x40080688
+I (30) boot: ESP-IDF v4.1-dirty 2nd stage bootloader
+I (30) boot: compile time 16:59:38
+I (30) boot: chip revision: 1
+I (33) boot_comm: chip revision: 1, min. bootloader chip revision: 0
+I (41) boot.esp32: SPI Speed      : 40MHz
+I (45) boot.esp32: SPI Mode       : DIO
+I (50) boot.esp32: SPI Flash Size : 16MB
+I (54) boot: Enabling RNG early entropy source...
+I (60) boot: Partition Table:
+I (63) boot: ## Label            Usage          Type ST Offset   Length
+I (71) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (78) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (86) boot:  2 factory          factory app      00 00 00010000 00100000
+I (93) boot: End of partition table
+I (97) boot_comm: chip revision: 1, min. application chip revision: 0
+I (104) esp_image: segment 0: paddr=0x00010020 vaddr=0x3f400020 size=0x09790 ( 38800) map
+I (128) esp_image: segment 1: paddr=0x000197b8 vaddr=0x3ffb0000 size=0x0217c (  8572) load
+I (132) esp_image: segment 2: paddr=0x0001b93c vaddr=0x40080000 size=0x00404 (  1028) load
+0x40080000: _WindowOverflow4 at D:/esp/esp-idf/components/freertos/xtensa_vectors.S:1778
+
+I (135) esp_image: segment 3: paddr=0x0001bd48 vaddr=0x40080404 size=0x042d0 ( 17104) load
+I (151) esp_image: segment 4: paddr=0x00020020 vaddr=0x400d0020 size=0x1d408 (119816) map
+0x400d0020: _stext at ??:?
+
+I (198) esp_image: segment 5: paddr=0x0003d430 vaddr=0x400846d4 size=0x064ac ( 25772) load
+0x400846d4: esp_panic_dig_reset at D:/esp/esp-idf/components/esp32/panic.c:441
+
+I (216) boot: Loaded app from partition at offset 0x10000
+I (216) boot: Disabling RNG early entropy source...
+I (217) cpu_start: Pro cpu up.
+I (220) cpu_start: Application information:
+I (225) cpu_start: Project name:     m5stack_espidf_sd_card_write_te
+I (232) cpu_start: App version:      d97e66b-dirty
+I (237) cpu_start: Compile time:     Oct 25 2020 17:02:48
+I (243) cpu_start: ELF file SHA256:  5c1589d412b43499...
+I (249) cpu_start: ESP-IDF:          v4.1-dirty
+I (254) cpu_start: Starting app cpu, entry point is 0x400810c4
+0x400810c4: call_start_cpu1 at D:/esp/esp-idf/components/esp32/cpu_start.c:271
+
+I (0) cpu_start: App cpu up.
+I (265) heap_init: Initializing. RAM available for dynamic allocation:
+I (272) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM
+I (278) heap_init: At 3FFCA2B0 len 00015D50 (87 KiB): DRAM
+I (284) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+I (290) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+I (297) heap_init: At 4008AB80 len 00015480 (85 KiB): IRAM
+I (303) cpu_start: Pro cpu start user code
+I (321) spi_flash: detected chip: gd
+I (322) spi_flash: flash io: dio
+I (322) cpu_start: Starting scheduler on PRO CPU.
+I (0) cpu_start: Starting scheduler on APP CPU.
+I (329) example: Initializing SD card
+I (329) example: Using SPI peripheral
+I (339) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 
+I (389) sdspi_transaction: cmd=5, R1 response: command not supported
+Name: USD
+Type: SDHC/SDXC
+Speed: 20 MHz
+Size: 7695MB
+I (409) example: Opening file
+I (275009) example: File written
+write buffer size = 16384
+sum=274589916 microseconds, average=27458 microseconds 
+maximum=173854 microseconds, minimum=22767 microseconds
+highest write speed = 719638 byte/s
+average write speed = 596693 byte/s
+lowest write speed = 94239 byte/s
+I (277349) example: Renaming file
+I (277359) example: Reading file
+I (277359) example: Read from file: ' !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^'
+I (277359) gpio: GPIO[23]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 
+I (277369) gpio: GPIO[19]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 
+I (277379) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 
+I (277389) gpio: GPIO[4]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 
+I (277399) example: Card unmounted
